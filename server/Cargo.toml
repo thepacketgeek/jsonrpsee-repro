@@ -1,0 +1,18 @@
+[package]
+name = "server"
+version = "0.1.0"
+authors = ["Mat Wood <mat@thepacketgeek.com>"]
+edition = "2018"
+
+[[bin]]
+name = "server"
+path = "src/main.rs"
+
+[dependencies]
+rpc-lib = { path = "../rpc_lib" }
+jsonrpsee = { git = "https://github.com/paritytech/jsonrpsee", default-features = false, features = ["http"] }
+futures = { version = "^0.3" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+structopt = "0.2.18" # 3.20
+tokio = {version = "^0.2.11", features=["macros", "tcp", "time", "stream"]} # 0.3.0

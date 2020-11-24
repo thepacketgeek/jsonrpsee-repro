@@ -1,0 +1,16 @@
+[package]
+name = "client"
+version = "0.1.0"
+authors = ["Mat Wood <mat@thepacketgeek.com>"]
+edition = "2018"
+
+[[bin]]
+name = "client"
+path = "src/main.rs"
+
+[dependencies]
+async-std = "0.99.8" # 1.7.0
+rpc-lib = { path = "../rpc_lib" }
+futures = { version = "0.3", features = ["async-await"] }
+jsonrpsee = { git = "https://github.com/paritytech/jsonrpsee", default-features = false, features = ["http"] }
+structopt = "0.2.18" # 3.20
